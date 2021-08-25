@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="overflow:hidden">
+	<head>
+		<meta charset="utf-8">
+		<title>Lista de compra - Fleto</title>
+		<meta name="description" content="Um aplicativo que reune as ofertas de diversos supermercados, apresenta de forma pesquisavel e ainda pode ser a sua lista de compras inteligente.">
+		<meta name="author" content="jovibadoli">
+		<meta name="theme-color" content="#B12A34">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--
+		<meta property="og:image" content="icons/icon-512.png">
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="style.css">
+		<link rel="manifest" href="fleto.webmanifest">
+		<script src="app.js" defer></script>
+		-->
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			#recarregar, #notificacao {
+				background: #c38a37;
+				border: none;
+				border-radius: 2em;
+				width: 2.5rem;
+				height: 2.5rem;
+			}
+			.compra {
+				background: #fff;
+				border-radius: .3em;
+				display: grid;
+				grid-template-columns: .8rem auto 2rem 2.5rem 1rem 2.8rem;
+				grid-gap: .2rem;
+				padding: .6rem .3rem;
+				margin: 0px .8rem;
+			}
+			.compraMarcado {
+				background: #f2efed!important;
+			}
+			.btnMenu {
+				background: #fff;
+				border: none;
+				color: #5e5857;
+				font-size: .7rem;;
+				display: block;
+				text-align: center;
+				padding: 2rem 0;
+				text-decoration: none;
+			}
+			input[type="checkbox"] {
+				height: 100%;
+				width: 100%;
+				margin: 0px;
+			}
+			.compra > input[type="text"], .compra > input[type="number"], .compra > select {
+				font-size: .75rem;
+				padding: .4rem .1rem;
+				border: none;
+				border-radius: 3px;
+				background: #f1eeec;
+				width: 100%;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			.compra > span {
+				font-size: .7rem
+			}
+			span {
+				margin: auto;
+			}
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+  			-webkit-appearance: none;
+  			margin: 0;
+			}
+			input[type=number] {
+  			-moz-appearance: textfield;
+			}
+		</style>
+	</head>
+	<body style="display: grid; grid-template-rows: 2.5rem 2.5rem auto 2.5rem 4.5rem; grid-gap: 1rem; height: 100vh; overflow: hidden; background: #f2efed; font-family: sans-serif; color: #524d4b; margin: .8rem 0px 0px 0px">
+		<header style="display: grid; grid-template-columns: auto 3rem 3rem; grid-gap: 1rem; height:2.5rem; margin: 0px .8rem">
+			<input type="search" onkeydown="search(this.value)" onkeyup="search(this.value)" placeholder="Pesquisar" style="width: 100%; border: none; outline: none; border-radius: 2em; padding: 0 1rem; background: #e5e1df; font-size: .8rem;height:2.5rem">
+			<button id="recarregar" onclick="buscaLista()">r</button>
+			<a href="notificacoes.html"><button id="notificacao">b</button></a>
+		</header>
+		<div style="margin: 0px .8rem; background: #fff; padding: .6rem; border-radius: .3em;">Itens marcado: R$<span id="total">69,99</span></div>
+		<div style="overflow-y:auto; overflow-x: hidden; max-width:768px;margin: 0px auto 0px auto;width:100%">
+			<div id="compras" style="display: grid; grid-gap: .5rem; margin: auto ">
+				
+			</div>
+		</div>
+		<div style="display: grid; grid-template-columns: auto 2.5rem ; margin: 0px.8rem;">
+			<input type="text" placeholder="Nome do produto..." style=" border: none; background: #e5e1df; padding: .8rem; outline: none;border-radius: .5em 0px 0px .5em" id="novoproduto">
+			<button onclick="insereLista()" type="button" style="background: #c38a37;border: none; border-radius: 0px .5em .5em 0px">+</button>
+		</div>
+		<nav style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+			<a href="ofertas.html" class="btnMenu">OFERTAS</a>
+			<a class="btnMenu" href="listacompras.html" >LISTA DE COMPRAS</a>
+			<a href="configuracoes.html" class="btnMenu">CONFIGURAÇÕES</a>
+		</nav>
+	</body>
+	<script defer>
+		function normalizeStr(s) {
+			return s.normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+		}
+		function search(v) {
+			v = normalizeStr(v.toLowerCase());
+			opts = document.querySelectorAll('.compra');
+			
+			for (var i = 0; i < opts.length; i++) {
+				if (!v || normalizeStr(opts[i].getElementsByClassName('nomeprod')[0].value.toLowerCase()).indexOf(v) > -1) {
+		  			opts[i].style['display'] = 'grid';
+				} else {
+		  			opts[i].style['display'] = 'none';
+				}
+			}
+		}
+		
+		var params = new URLSearchParams(document.location.search.substring(1));
+		var listas = JSON.parse(localStorage.getItem("listas"));
+		var idLista = parseInt(params.get("lista"), 10);
+		var click = 0;
+		
+		function gbi(e) {
+			//GET ELEMENT BY ID
+			return document.getElementById(e);
+		}
+		
+		function buscaLista() {
+			if(localStorage.hasOwnProperty("listas")) {
+				
+				var html = "";
+				var fimhtml = "";
+				var local = "";
+				var max = Object.keys(listas[idLista].itens).length;
+				var medidas = ["UN", "GR", "KG"];
+				var total = 0;
+				
+				for(var i = max-1; i >= 0; i--) {
+					if(listas[idLista].itens[i].ativo != false) { 
+						local += "<div id='d" + i + "' class='compra";
+						if(listas[idLista].itens[i].marcado) {
+							if(listas[idLista].itens[i].unidade == 0) {
+								total += listas[idLista].itens[i].quantidade * listas[idLista].itens[i].preco;
+							} else {
+								total += listas[idLista].itens[i].preco;
+							}
+							local += " compraMarcado";
+						}
+							local += "'><input type='checkbox'";
+						
+							if(listas[idLista].itens[i].marcado) {
+								local += " checked ";
+							}
+							local += "id='" + i + "' onchange='checklist(" + i + ")'>";
+							local += "<input type='text' class='nomeprod' onchange='up(\"produto\", this.value, " + i + ")' value='" + listas[idLista].itens[i].produto + "'>";
+							local += "<input type='number' value=" + listas[idLista].itens[i].quantidade + " onchange='up(\"quantidade\", this.value, " + i + ")' min=-1 max=999>";
+							local += "<select onchange='up(\"unidade\", this.options[this.selectedIndex].value, " + i + ")'>";
+							
+							for(var j = 0; j <3; j++) {
+								local += "<option value='" + j + "' ";
+								if(j == listas[idLista].itens[i].unidade) {
+									local += " selected ";
+								}
+								local += ">" + medidas[j] + "</option>"
+							}
+							
+							local += "</select><span>R$ </span>"
+							local +="<input type='number' value=" + listas[idLista].itens[i].preco + " onchange='up(\"preco\", this.value, " + i + ")' min=0>";
+						local += "</div>";
+						
+						if(listas[idLista].itens[i].marcado == true) {
+							fimhtml += local;
+						} else {
+							html += local;
+						}
+						local = "";
+						html += fimhtml;
+					}
+				}	
+				html += "<button id='apaga' onclick='apagaLista()' style='color: #f00; background: #fff;border: 3px solid #f00;margin: 0px .8rem;font-size: .7rem;padding: .6rem .3rem;border-radius: .3em;font-weight: bold;'>APAGAR LISTA</button>";
+				gbi("compras").innerHTML = html;
+				gbi("total").innerHTML = total;
+			}
+		}
+		
+		buscaLista();
+		
+		function insereLista() {
+			var produto = gbi("novoproduto").value;
+			
+			if(produto != "") {
+				
+				var max = Object.keys(listas[idLista].itens).length;
+				
+				listas[idLista].itens[max] = {produto, quantidade: 1, unidade: 0, preco: 0.00, marcado: false, ativo: true};
+				
+				localStorage.setItem("listas", JSON.stringify(listas));
+				
+				buscaLista();
+			}
+		}
+		
+		function checklist(opt) {
+			elem = "d"+ opt;
+			if(listas[idLista].itens[opt].marcado == true) {
+				listas[idLista].itens[opt].marcado = false;
+			} else {
+				listas[idLista].itens[opt].marcado = true;
+			}
+			localStorage.setItem("listas", JSON.stringify(listas));
+			buscaLista();
+		}
+		
+		function up(opt, value, id) {
+			if(value > -1) {
+				listas[idLista].itens[id][opt] = value;
+				localStorage.setItem("listas", JSON.stringify(listas));
+			} else {
+				listas[idLista].itens[id].ativo = false;
+				delete listas[idLista].itens[id].produto;
+				delete listas[idLista].itens[id].quantidade;
+				delete listas[idLista].itens[id].unidade;
+				delete listas[idLista].itens[id].preco;
+				delete listas[idLista].itens[id].marcado;
+				
+				localStorage.setItem("listas", JSON.stringify(listas));
+				buscaLista();
+			}
+		}
+		
+		function apagaLista() {
+			if(click == 0) {
+				click++;
+				gbi("apaga").innerText = "CLIQUE NOVAMENTE PARA CONFIRMAR";
+			} else {
+				delete listas[idLista].nome;
+				delete listas[idLista].itens;
+				listas[idLista].ativo = false;
+				localStorage.setItem("listas", JSON.stringify(listas));
+				window.location ='listacompras.html';
+			}
+		}
+	</script>
+</html>

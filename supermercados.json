@@ -1,0 +1,967 @@
+{
+	"AC": {
+		"Rio Branco": [
+			"Atacadão",
+			
+		],
+	}
+	"AL": {
+		"Arapiraca": [
+			"Assaí",
+			"Atacadão",
+			
+		],
+		"Maceió": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper"
+		],
+	},
+	"AP": {
+		"Macapá": [
+			"Assaí",
+			"Atacadão",
+			
+		],
+	},
+	"AM": {
+		"Manaus": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+	},
+	"BA": {
+		"Alagoinhas": [
+			"Atacadão",
+			
+		],
+		"Barreiras": [
+			"Atacadão",
+			
+		],
+		"Camaçari": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Eunápolis": [
+			"Atacadão",
+			
+		],
+		"Feira de Santana": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Guanambi": [
+			"Assaí",
+			
+		],
+		"Ilhéus": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Itapetinga": [
+			"Assaí",
+			
+		],
+		"Irecê": [
+			"Atacadão",
+			
+		],
+		"Jequié": [
+			"Assaí",
+			
+		],
+		"Juazeiro": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Lauro de Freitas": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Paulo Afonso": [
+			"Assaí",
+			
+		],
+		"Salvador": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper"
+		],
+		"Serrinha": [
+			"Assaí",
+			
+		],
+		"Santo Antônio de Jesus": [
+			"Atacadão",
+			
+		],
+		"Senhor do Bonfim": [
+			"Assaí",
+			
+		],
+		"Simões Filho": [
+			"Atacadão",
+			
+		],
+		"Teixeira de Freitas": [
+			"Atacadão",
+			
+		],
+		"Vitória da Conquista": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"CE": {
+		"Caucaia": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Fortaleza": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mercado",
+		].
+		"Eusébio": [
+			"Atacadão",
+			
+		],
+		"Iguatu": [
+			"Assaí",
+		].
+		"Juazeiro do Norte": [
+			"Assaí",
+			"Atacadão",
+		].
+		"Maracanaú": [
+			"Assaí",
+		],
+		"Sobral": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"DF": {
+		"Brasília": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Bairro",
+			"Carrefour Hiper",
+			"Extra Hiper"
+		],
+	},
+	"ES": {
+		"Serra": [
+			"Atacadão",
+			
+		],
+		"Vila Velha": [
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+	},
+	"GO":{
+		"Anápolis": [
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+		"Aparecida de Goiânia": [
+			"Atacadão",
+		],
+		"Goiânia": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper"
+		],
+		"Itumbiara": [
+			"Atacadão",
+		],
+		"Rio Verde": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Valparaíso de Goiás": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"MA": {
+		"Imperatriz": [
+			"Assaí",
+			"Atacadão",
+		],
+		"São Luís": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"MT": {
+		"Barra do Garças": [
+			"Atacadão",
+		],
+		"Cuiabá": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Lucas do Rio Verde": [
+			"Atacadão",
+		],
+		"Rondonópolis": [
+			"Atacadão",
+		],
+		"Rondonópolis": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Sinop": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Tangará da Serra": [
+			"Atacadão",
+		],
+		"Várzea Grande": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"MS": {
+		"Campo Grande": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper"
+		],
+		"Dourados": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Três Lagoas": [
+			"Atacadão",
+		],
+	},
+	"MG": {
+		"Belo Horizonte": {
+			"Carrefour Bairro",
+			"Carrefour Hiper",
+			"Extra Hiper"
+		},
+		"Betim": [
+			"Atacadão",
+		],
+		"Contagem": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Governador Valadares": [
+			"Atacadão",
+		],
+		"Juiz de Fora": [
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+		"Uberaba": [
+			"Atacadão",
+		],
+		"Uberlândia": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+	},
+	"PA": {
+		"Ananindeua": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Belém": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Castanhal": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Marabá": [
+			"Atacadão",
+		],
+		"Parauapebas": [
+			"Assaí",
+		],
+		"Santarém": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"PB": {
+		"Campina Grande": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper"
+		],
+		"João Pessoa": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mercado",
+		],
+		"Patos": [
+			"Atacadão",
+		],
+		"Santa Rita": [
+			"Atacadão",
+		],
+	},
+	"PR": {
+		"Cambé": [
+			"Atacadão",
+		],
+		"Cascavel": [
+			"Atacadão",
+		],
+		"Curitiba": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper"
+		],
+		"Foz do Iguaçu": [
+			"Atacadão",
+		],
+		"Guarapuava": [
+			"Atacadão",
+		],
+		"Londrina": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Maringá": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Pinhais": [
+			"Carrefour Hiper"
+		],
+		"Ponta Grossa": [
+			"Atacadão",
+		],
+		"São José dos Pinhais": [
+			"Atacadão",
+		],
+		"Umuarama": [
+			"Atacadão",
+		],
+	},
+	"PE": {
+		"Camaragibe": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Caruaru": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Garanhuns": [
+			"Assaí",
+			
+		],
+		"Igarassu": [
+			"Atacadão",
+		],
+		"Jaboatão dos Guararapes": [
+			"Assaí",
+			"Atacadão",
+			"Extra Mercado"
+		],
+		"Olinda": [
+			"Atacadão",
+			"Extra Mercado"
+		],
+		"Paulista": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Petrolina": [
+			"Atacadão",
+		],
+		"Recife": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini"
+		],
+		"Serra Talhada": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"PI": {
+		"Parnaíba": [
+			"Assaí",
+			
+		],
+		"Picos": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Teresina": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper",
+			"Extra Mercado",
+		],
+	},
+	"RJ": {
+		"Belford Roxo": [
+			"Carrefour Hiper"
+		],
+		"Cabo Frio": [
+			"Atacadão"
+		],
+		"Campos dos Goytacazes": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Duque de Caxias": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Mercado",
+		],
+		"Itaboraí": [
+			"Atacadão",
+		],
+		"Itaipava": [
+			"Extra Hiper",
+		],
+		"Macaé": [
+			"Atacadão",
+		],
+		"Magé": [
+			"Extra Mercado",
+		],
+		"Mesquita": [
+			"Assaí",
+			
+		],
+		"Nilópolis": [
+			"Assaí",
+			
+		],
+		"Niterói": [
+			"Assaí",
+			"Extra Hiper",
+			"Extra Mercado",
+		],
+		"Nova Friburgo": [
+			"Atacadão",
+		],
+		"Nova Iguaçu": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper",
+		],
+		"Petrópolis": [
+			"Assaí",
+			"Extra Mercado",
+		],
+		"Resende": [
+			"Atacadão",
+		],
+		"Rio das Ostras": [
+			"Atacadão",
+		],
+		"Rio de Janeiro": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+		],
+		"São Gonçalo": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mercado",
+		],
+		São João de Meriti: [
+			"Assaí",
+			
+		],
+		"São Pedro da Aldeia": [
+			"Atacadão",
+		],
+		"Queimados": [
+			"Extra Mercado",
+		],
+		"Volta Redonda": [
+			"Atacadão",
+			"Extra Hiper",
+		],
+	},
+	"RN": {
+		"Mossoró": [
+			"Atacadão",
+		],
+		"Natal": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+		],
+		"Parnamirim": [
+			"Atacadão",
+			"Extra Hiper",
+		],
+	},
+	"RS":{
+		"Canoas": [
+			"Carrefour Hiper"
+		],
+		"Caxias do Sul": [
+			"Atacadão",
+		],
+		"Estrela": [
+			"Atacadão",
+		],
+		"Gravataí": [
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+		"Novo Hamburgo": [
+			"Atacadão",
+		],
+		"Pelotas": [
+			"Atacadão",
+		],
+		"Porto Alegre": [
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+		"Rio Grande": [
+			"Atacadão",
+		],
+		"Santa Maria": [
+			"Atacadão",
+			"Carrefour Hiper"
+		],
+		"São Leopoldo": [
+			"Atacadão",
+		],
+		"Sapucaia do Sul": [
+			"Atacadão",
+		],
+		"Porto Alegre": [
+			"Atacadão",
+		],
+		"Viamão": [
+			"Atacadão",
+		],
+	},
+	"RO": {
+		"Paraná": [
+			"Atacadão",
+		],
+		"Porto Velho": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Vilhena": [
+			"Atacadão",
+		],
+	},
+	"RR": {
+		"Boa Vista": [
+			"Assaí",
+			"Atacadão",
+		],
+	},
+	"SC": {
+		"Blumenau": [
+			"Atacadão",
+		],
+		"Chapecó": [
+			"Atacadão",
+		],
+		"Içara": [
+			"Atacadão",
+		],
+		"Florianópolis": [
+			"Atacadão",
+		],
+		"Itajaí": [
+			"Atacadão",
+		],
+		"Joinville": [
+			"Atacadão",
+		],
+		"São José": [
+			"Atacadão",
+		],
+	},
+	"SP": {
+		"Araçatuba": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Araraquara": [
+			"Atacadão",
+			"Extra Hiper",
+		],
+		"Araruama": [
+			"Extra Mercado",
+		],
+		"Atibaia": [
+			"Atacadão",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"Barretos": [
+			"Atacadão",
+			"Extra Hiper",
+		],
+		"Barueri": [
+			"Atacadão",
+			"Carrefour Express",
+			"Extra Mini",
+		],
+		"Bauru": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+		],
+		"Campinas": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mini",
+		],
+		"Caraguatatuba": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper",
+		],
+		"Carapicuíba": [
+			"Assaí",
+			"Atacadão",
+			"Extra Mercado",
+		],
+		"Catanduva": [
+			"Extra Hiper",
+		],
+		"Cotia": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Market",
+			"Extra Hiper",
+			"Extra Mini",
+		],
+		"Cubatão": [
+			"Extra Mercado",
+		],
+		"Diadema": [
+			"Assaí",
+			"Carrefour Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"Embu das Artes": [
+			"Assaí",
+			
+		],
+		"Embu Guaçu": [
+			"Extra Mercado",
+		],
+		"Ferraz de Vasconcelos": [
+			"Atacadão",
+			
+		],
+		"Franca": [
+			"Atacadão",
+			"Makro",
+			
+		],
+		"Franco da Rocha": [
+			"Assaí",
+		],
+		"Guaratinguetá": [
+			"Atacadão",
+			"Extra Mercado",
+		],
+		"Guarujá": [
+			"Atacadão",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"Guarulhos": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Hiper",
+			"Extra Mini",
+		],
+		"Hortolândia": [
+			"Assaí",
+		],
+		"Indaiatuba": [
+			"Assaí",
+		],
+		"Itanhaém": [
+			"Atacadão",
+			"Extra Mercado",
+		],
+		"Itapecerica da Serra": [
+			"Atacadão",
+			"Carrefour Express",
+			"Extra Mercado",
+		],
+		"Itatiba": [
+			"Extra Hiper",
+		],
+		"Itapetininga": [
+			"Extra Hiper",
+		],
+		"Itapevi": [
+			"Atacadão",
+		],
+		"Itaquaquecetuba": [
+			"Assaí",
+		],
+		"Itu": [
+			"Extra Hiper",
+		],
+		"Jacareí": [
+			"Atacadão",
+		],
+		"Jandira": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Jundiaí": [
+			"Assaí",
+			"Atacadão",
+			"Carrefour Hiper",
+			"Extra Hiper",
+		],
+		"Limeira": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Marília": [
+			"Atacadão",
+			"Makro",
+		
+		]
+		"Mauá": [
+			"Assaí",
+			"Extra Mini",
+		],
+		,
+		"Mogi das Cruzes": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Extra Hiper",
+			"Extra Mercado",
+		],
+		"Mogi Mirim": [
+			"Atacadão",
+		],
+		"Mongaguá": [
+			"Extra Mercado",
+		],
+		"Osasco": [
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"Paulínia": [
+			"Assaí",
+		],
+		"Peruíbe": [
+			"Extra Mercado",
+		],
+		"Piracicaba": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Extra Mini",
+		],
+		"Praia Grande": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Market",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"Presidente Prudente": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper"
+		],
+		"Ribeirão Pires": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Ribeirão Preto": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Extra Hiper",
+		],
+		"Rio Claro": [
+			"Assaí",
+		],
+		"Santa Bárbara d`Oeste": [
+			"Atacadão",
+		],
+		"Santo André": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"Santos": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"São Bernardo do Campo": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"São Caetano do Sul": [
+			"Assaí",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"São Carlos": [
+			"Atacadão",
+			"Carrefour Bairro",
+			"Extra Hiper",
+		],
+		"São José do Rio Preto": [
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper"
+		],
+		"São José dos Campos": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Extra Hiper",
+		],
+		"São Paulo": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Market",
+			"Carrefour Hiper",
+			"Carrefour Express",
+			"Extra Hiper",
+			"Extra Mercado",
+			"Extra Mini",
+		],
+		"São Pedro D' Aldeia": [
+			"Extra Mercado",
+		],
+		"São Sebastião": [
+			"Extra Mercado",
+		],
+		"São Vicente": [
+			"Assaí",
+			"Atacadão",
+			"Extra Mercado",
+		],
+		"Sorocaba": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Hiper",
+			"Extra Hiper",
+			"Extra Mini",
+		],
+		"Suzano": [
+			"Assaí",
+			"Atacadão",
+		],
+		"Taboão da Serra": [
+			"Assaí",
+			"Extra Hiper",
+			"Extra Mini",
+		],
+		"Taubaté": [
+			"Assaí",
+			"Atacadão",
+			"Makro",
+			"Carrefour Bairro"
+		],
+		"Valinhos": [
+			"Carrefour Bairro"
+		],
+		"Vinhedo": [
+			"Extra Mercado",
+		]
+	}
+	"SE": {
+		"Aracaju": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper",
+		],
+		"Itabaiana": [
+			"Assaí",
+		],
+	},
+	"TO": {
+		"Araguaína": [
+			"Atacadão",
+		],
+		"Palmas": [
+			"Assaí",
+			"Atacadão",
+			"Extra Hiper",
+		],
+	},
+}

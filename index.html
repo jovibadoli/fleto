@@ -1,0 +1,84 @@
+	<!DOCTYPE html>
+<html lang="pt-br" style="overflow:hidden">
+	<head>
+		<meta charset="utf-8">
+		<title>Lista de compra - Fleto</title>
+		<meta name="description" content="Um aplicativo que reune as ofertas de diversos supermercados, apresenta de forma pesquisavel e ainda pode ser a sua lista de compras inteligente.">
+		<meta name="author" content="jovibadoli">
+		<meta name="theme-color" content="#B12A34">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--
+		<meta property="og:image" content="icons/icon-512.png">
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="style.css">
+		<link rel="manifest" href="fleto.webmanifest">
+		<script src="app.js" defer></script>
+		-->
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			input[type="radio"] {
+				height: 100%;
+				width: 100%;
+				margin: 0px;
+			}
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+  			-webkit-appearance: none;
+  			margin: 0;
+			}
+			input[type=number] {
+  			-moz-appearance: textfield;
+			}
+			label {
+				margin-left: 1rem;
+				font-size: .8rem;
+				padding: .5rem 0px;
+			}
+			.estado {
+				display: grid;
+				grid-template-columns: 1.5rem auto;
+			}
+		</style>
+	</head>
+	<body style="display: grid; grid-gap: 1rem; overflow: hidden; background: #f2efed; font-family: sans-serif; color: #524d4b; margin: .8rem">
+		<h1>Bem vindo ao fleto</h1>
+		<input type="search" onkeyup="search(this.value)" onkeydown="search(this.value)">
+		<div style="height:10rem; background: #fff;overflow-y:scroll;padding:.5rem">
+			<div id="estados" style="display: grid">
+				<div class="estado">
+					<input type="radio" name="estado" id="amapa">
+					<label for="amapa">Amapá</label>
+				</div>
+				<div class="estado">
+					<input type="radio" name="estado" id="amapa">
+					<label for="amapa">São Paulo</label>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script defer>
+		function normalizeStr(s) {
+			return s.normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+		}
+		function search(v) {
+			v = normalizeStr(v.toLowerCase());
+			opts = document.querySelectorAll('.estado');
+			
+			for (var i = 0; i < opts.length; i++) {
+				if (!v || normalizeStr(opts[i].textContent.toLowerCase()).indexOf(v) > -1) {
+		  		opts[i].style['display'] = 'grid';
+				} else {
+		  		opts[i].style['display'] = 'none';
+				}
+			}
+		}
+		
+		function gbi(e) {
+			//GET ELEMENT BY ID
+			return document.getElementById(e);
+		}
+		
+	</script>
+</html>

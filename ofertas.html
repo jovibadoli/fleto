@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="overflow:hidden">
+	<head>
+		<meta charset="utf-8">
+		<title>Ofertas - Fleto</title>
+		<meta name="description" content="Um aplicativo que reune as ofertas de diversos supermercados, apresenta de forma pesquisavel e ainda pode ser a sua lista de compras inteligente.">
+		<meta name="author" content="jovibadoli">
+		<meta name="theme-color" content="#B12A34">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--
+		<meta property="og:image" content="icons/icon-512.png">
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="style.css">
+		<link rel="manifest" href="fleto.webmanifest">
+		<script src="app.js" defer></script>
+		-->
+		<style>
+			img {
+				display: block;
+				width: 90%;
+				margin: auto;
+			}
+			h1 {
+				font-size: .9rem;
+			}
+			h2 {
+				font-size: 1.2rem;
+				color: red;
+			}
+			h3 {
+				font-size: .6rem;
+				font-weight: bold;
+			}
+			h1, h2, h3 {
+				margin: .25rem 0;
+			}
+			h4 {
+				font-size: .8rem;
+				margin: .4rem 0;
+			}
+			#recarregar, #notificacao {
+				background: #c38a37;
+				border: none;
+				border-radius: 2em;
+				width: 2.5rem;
+				height: 2.5rem;
+			}
+			.produto {
+				background: #fff;
+				padding: .5rem;
+				border-radius: .3em;
+			}
+			.salvar {
+				background: #c38a37;
+				color: #fff;
+				border: none;
+				padding: .5rem;
+				border-radius: .3em;
+			}
+			.btnMenu {
+				background: #fff;
+				border: none;
+				color: #5e5857;
+				font-size: .7rem;;
+				display: block;
+				text-align: center;
+				padding: 2rem 0;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body style="display: grid; grid-template-rows: 2.5rem auto 4.5rem; grid-gap: 1rem; height: 100vh; overflow: hidden; background: #f2efed; font-family: sans-serif; color: #524d4b; margin: .8rem 0px 0px 0px">
+		<header style="display: grid; grid-template-columns: auto 3rem 3rem; grid-gap: 1rem; margin: 0px .8rem 0px .8rem; height:2.5rem">
+			<input type="search" onkeydown="search(this.value)" onkeyup="search(this.value)" placeholder="Pesquisar" style="width: 100%; border: none; outline: none; border-radius: 2em; padding: .25rem 1rem; background: #e5e1df; font-size: .8rem; height: 2.5rem">
+			<button id="recarregar" onclick="carregaOfertas()">r</button>
+			<a href="notificacoes.html">
+				<button id="notificacao">
+					b
+				</button>	
+			</a>
+		</header>
+		<div style="overflow-y:auto">
+			<div id="produtos" style="display: grid; grid-template-columns: repeat( auto-fit, minmax(140px, 1fr) ); grid-gap: .5rem; margin: .8rem">
+			<div id="carregando" style="margin:auto;font-weight:bold;background:#fff;padding:1rem;text-align:center">Só um momento, as ofertas estão carregando...</div>
+			</div>
+		</div>
+		<nav style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+			<a class="btnMenu" style="color: #c38a37;">OFERTAS</a>
+			<a href="listacompras.html" class="btnMenu">LISTA DE COMPRAS</a>
+			<a href="configuracoes.html" class="btnMenu">CONFIGURAÇÕES</a>
+		</nav>
+	</body>
+	<script defer>
+		function normalizeStr(s) {
+			return s.normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+		}
+		function search(v) {
+			v = normalizeStr(v.toLowerCase());
+			opts = document.querySelectorAll('.produto');
+			
+			for (var i = 0; i < opts.length; i++) {
+				if (!v || normalizeStr(opts[i].textContent.toLowerCase()).indexOf(v) > -1) {
+		  		opts[i].style['display'] = 'block';
+				} else {
+		  		opts[i].style['display'] = 'none';
+				}
+			}
+		}
+		function gbi(e) {
+			//GET ELEMENT BY ID
+			return document.getElementById(e);
+		}
+		function ofertas() {
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function() {
+				var ofertas = JSON.parse(this.responseText);
+				var html = "";
+				
+				for(var i=0;i<ofertas.length;i++) {
+					//(if ofertas[i].dia <= data.getDate() && ofertas[i].mes <= getMonth()+1 ) {
+						html += "<div class='produto'><img src='" + ofertas[i].img + "'><h1>" + ofertas[i].titulo + "</h1><h2>R$ " + ofertas[i].preco + "</h2><h4>" + "a fazer" + "</h4><h3>" + ofertas[i].local + "</h3><button class='salvar' type='button' onclick='salvar(" + i + ")'>Adicionar às compras</button></div>";
+					//}
+				}
+				gbi("produtos").innerHTML = html;
+			}
+			xhttp.open("GET", "https://jovibadoli.gitlab.io/fleto/lista.json", true);
+			xhttp.send();
+		}
+		
+		const data = new Date();
+		
+		function carregaOfertas() {
+			if(window.navigator.onLine == true) {
+				ofertas();
+			} else {
+				gbi("carregando").innerHTML = "Parece que você está sem internet, e por isso não conseguimos buscar as ofertas :/"
+			}
+		}
+		carregaOfertas();
+	</script>
+</html>

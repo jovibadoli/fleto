@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="overflow:hidden">
+	<head>
+		<meta charset="utf-8">
+		<title>Listas de compras - Fleto</title>
+		<meta name="description" content="Um aplicativo que reune as ofertas de diversos supermercados, apresenta de forma pesquisavel e ainda pode ser a sua lista de compras inteligente.">
+		<meta name="author" content="jovibadoli">
+		<meta name="theme-color" content="#B12A34">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--
+		<meta property="og:image" content="icons/icon-512.png">
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="style.css">
+		<link rel="manifest" href="fleto.webmanifest">
+		<script src="app.js" defer></script>
+		-->
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			#recarregar, #notificacao {
+				background: #c38a37;
+				border: none;
+				border-radius: 2em;
+				width: 2.5rem;
+				height: 2.5rem;
+			}
+			.lista {
+				background: #fff;
+				padding: 1rem;
+				border-radius: .3em;
+				display: grid;
+				grid-gap: 1rem;
+				text-decoration: none;
+				color: #524d4b;
+				margin: 0px .8rem;
+			}
+			.btnMenu {
+				background: #fff;
+				border: none;
+				color: #5e5857;
+				font-size: .7rem;;
+				display: block;
+				text-align: center;
+				padding: 2rem 0;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body style="display: grid; grid-template-rows: 2.5rem auto 2rem 4.5rem; grid-gap: 1rem; height: 100vh; overflow: hidden; background: #f2efed; font-family: sans-serif; color: #524d4b; margin: .8rem 0px 0px 0px">
+		<header style="display: grid; grid-template-columns: auto 3rem 3rem; grid-gap: 1rem; height:2.5rem; margin: 0px .8rem 0px .8rem">
+			<input value="" type="search" onkeydown="search(this.value)" onkeyup="search(this.value)" placeholder="Pesquisar" style="width: 100%; border: none; outline: none; border-radius: 2em; padding: 0 1rem; background: #e5e1df; font-size: .8rem;height:2.5rem">
+			<button id="recarregar" onclick="buscaListas()">r</button>
+			<a href="notificacoes.html"><button id="notificacao">b</button></a>
+		</header>
+		<div style="overflow-y:auto;max-width:768px;margin: 0px auto 0px auto;width:100%">
+			<div id="listas" style="display: grid; grid-gap: .5rem; margin: auto">
+				<p class="lista">Opa, você ainda não tem listas de compras, crie uma agora</p>
+			</div>
+		</div>
+		<div style="display: grid; margin: auto .8rem; grid-template-columns: auto 2.5rem">
+			<input id="nome" type="text" placeholder="Nome da lista" style=" border: none; background: #e5e1df; padding: .8rem; outline: none;border-radius: .5em 0px 0px .5em">
+			<button onclick="insereLista()" type="button" style="background: #c38a37;border: none; border-radius: 0px .5em .5em 0px">+</button>
+		</div>
+		<nav style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+			<a href="ofertas.html" class="btnMenu">OFERTAS</a>
+			<a class="btnMenu" style="color: #c38a37;">LISTA DE COMPRAS</a>
+			<a href="configuracoes.html" class="btnMenu">CONFIGURAÇÕES</a>
+		</nav>
+	</body>
+	<script defer>
+		function normalizeStr(s) {
+			return s.normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+		}
+		function search(v) {
+			v = normalizeStr(v.toLowerCase());
+			opts = document.querySelectorAll('.lista');
+			
+			for (var i = 0; i < opts.length; i++) {
+				if (!v || normalizeStr(opts[i].innerText.toLowerCase()).indexOf(v) > -1) {
+		  		opts[i].style['display'] = 'grid';
+				} else {
+		  		opts[i].style['display'] = 'none';
+				}
+			}
+		}
+		function gbi(e) {
+			//GET ELEMENT BY ID
+			return document.getElementById(e);
+		}
+		
+		function insereLista() {
+			var nome = gbi("nome").value;
+			var lista = {nome, ativo: true, "itens": {}};
+			
+			if(localStorage.hasOwnProperty("listas") == false) {
+				var listas = {0: lista}
+			} else {
+				var listas = JSON.parse(localStorage.getItem("listas"));
+				
+				listas = {...listas, [Object.keys(listas).length]: lista};
+			}
+			
+			localStorage.setItem("listas", JSON.stringify(listas));
+			buscaListas();
+			gbi("nome").value = "";
+		}
+		
+		function buscaListas() {
+			if(localStorage.hasOwnProperty("listas")) {
+				var listas = JSON.parse(localStorage.getItem("listas"));
+				var html = "";
+				var max = Object.keys(listas).length
+				
+				for(var i = max-1; i >= 0; i--) {
+					if(listas[i].ativo != false) { 
+						html += "<a href='listacompra.html?lista=" + i + "' class='lista'>" + listas[i].nome +	"</a>";
+					}
+				}	
+				gbi("listas").innerHTML = html;
+			}
+		}
+		
+		buscaListas();
+	</script>
+</html>
